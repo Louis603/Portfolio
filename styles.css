@@ -100,11 +100,24 @@ a:hover {
     }
 }
 @media screen and (max-width: 900px) {
-    #sdisplay-right {
+    #display-right {
         display: inline;
-        height: 30%;
+        height: 40%;
         border-color: purple;
         border-style: solid;
         border-width: 10px;
     }
 }
+
+/* #carouselExampleFade .carousel-item img {
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+} */
+/* 
+.w-100 {
+    background-color: black;
+    width: 600px;
+} */
+
+need to fix image sizing in carousel so its universal
