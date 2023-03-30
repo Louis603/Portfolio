@@ -31,7 +31,7 @@ const description = document.createElement('p')
 const linkDiv =  document.createElement('div')
 const btnGroup = document.querySelector(".btn-group")
 const carouselInner = document.querySelector(".carousel-inner")
-console.log(carouselInner)
+// console.log(carouselInner)
 // let caroBtn = document.querySelector(".carousel-control-next")
 // caroBtn.addEventListener('click', (e) => console.log("hello"))
 // linkDiv.removeChild()
@@ -40,7 +40,7 @@ console.log(carouselInner)
 
 
 const rightBox = document.getElementById("display-right")
-console.log(rightBox)
+// console.log(rightBox)
 
 const leftBox = document.getElementById("display-left")
 const leftTitleContainer = document.getElementById("display-left-title")
@@ -78,10 +78,19 @@ function displayList(arr){
 
 function displayActiveLink(e,arr,title) {
     e.preventDefault()
-    let currentActive = document.querySelector(".active")
+    let currentActive = document.querySelector("a.active")
+
+    if(currentActive){
+        console.log(title)
+        title.classList.toggle("active")
+        currentActive.classList.remove("active")
+    }else {
+        title.classList.toggle("active")
+
+    }
     console.log(currentActive)
-    currentActive.classList.remove("active")
-    title.classList.toggle("active")
+    // currentActive.classList.remove("active")
+    // title.classList.toggle("active")
     // console.log(title)
 
 
@@ -109,7 +118,6 @@ function displayLeft(e,arr){
     leftTitle.textContent = arr.title
     description.textContent = arr.summary
     for (const item in arr.link) {
-        console.log(item, arr.link[item])
         let redirectLink = document.createElement('a')
         redirectLink.href = arr.link[item]
         redirectLink.textContent = item
@@ -118,12 +126,10 @@ function displayLeft(e,arr){
         // console.log(linkDiv.childNodes)
     }
     for (const item in arr.pics) {
-        console.log(arr.pics[item])
         let caroDiv = document.createElement('div')
         let caroImg = document.createElement('img')
         caroImg.src = arr.pics[item]
         caroImg.classList.add('d-block','w-100')
-        console.log(arr.pics[0] === arr.pics[item] ? true : false)
         arr.pics[0] === arr.pics[item] ? caroDiv.classList.add('carousel-item', 'active') : caroDiv.classList.add('carousel-item')
         caroDiv.append(caroImg)
         carouselInner.append(caroDiv)
