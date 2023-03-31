@@ -1,3 +1,19 @@
+const tommatDetails = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+const goodCitiDetails = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+//MAKE A CLASS ON HOW PROJECTS OBJ SHOULD BE
+
+// <--------------------NOTES NOTES NOTES------>
+//align profile icon and links
+//resize main container
+//choose colors
+//fix description links
+//icons for github linkedin etc
+//icons for languages used in description right box
+//make an about me with hobbies interests and reasoning for coding
+//change size of fullscreen webpage as ive only been viewing the page in smaller screens....
+
 const projects = [
     {
         title: "Tommat",
@@ -6,7 +22,7 @@ const projects = [
             Demo: "youtube.com",
             "View Site": "youtube.com"
         },
-        summary: "this was made very well and i like it a lot so please like it too",
+        summary: tommatDetails,
         language: "React",
         pics: ["pictures/tommat-1.jpeg", "pictures/tommat-2.png"]
     },
@@ -17,7 +33,7 @@ const projects = [
             Demo: "youtube.com",
             "View Site": "youtube.com"
         },
-        summary: "i like it a lot so please like it too",
+        summary: goodCitiDetails,
         language: "React",
         pics: ["pictures/good-citizen-1.png", "pictures/good-citizen-2.png" ]
     }
@@ -66,7 +82,7 @@ function displayList(arr){
     title.target = '_blank'
     title.href = "https://www.youtube.com/"
     title.textContent = arr.title
-    title.classList.add("btn", "btn-primary")
+    title.classList.add("btn", "btn-success")
     // title.href = arr.link
     title.addEventListener('click', (e) => displayLeft(e, arr))
     title.addEventListener('click', (e) => displayActiveLink(e,arr,title))
@@ -135,7 +151,7 @@ function displayLeft(e,arr){
         carouselInner.append(caroDiv)
         // carouselInner.append("skaljdfkls")
     }
-    leftBox.append(description)
+    rightBox.append(description)
 }
 
 
